@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 
 const PROXY_URL = "http://localhost:8080";
 
+// The following is a custom hook, that takes a link, sends it to the server and returns the response
 function useRequest() {
   const firstUpdate = useRef(true);
   const [data, setData] = useState();

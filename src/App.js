@@ -1,10 +1,20 @@
-import React from 'react';
-import TicketList from './pages/TicketList'
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import TicketList from "./pages/TicketList";
+import Ticket from "./pages/Ticket";
 
 const App = () => {
   return (
-    <TicketList />
-  )
-}
+    <Router>
+      <Route exact path="/">
+        <TicketList />
+      </Route>
+      <Route path="/tickets">
+        <Ticket />
+      </Route>
+    </Router>
+  );
+};
 
 export default App;

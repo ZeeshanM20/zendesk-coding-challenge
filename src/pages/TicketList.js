@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import useRequest from "../hooks/useRequest";
 
 const TicketList = () => {
-  const { setApiUrl, data, isLoading, error } = useRequest();
+  const { setApiUrl, data, isLoading } = useRequest();
 
   useEffect(() => {
     setApiUrl(
@@ -17,12 +19,22 @@ const TicketList = () => {
       ) : (
         data &&
         data.tickets.map((ticket) => (
-          <div style={{ textAlign: "center", padding: "20px 0" }}>
-            <p>ID: {ticket.id}</p>
+          <div
+            key={ticket.id}
+            style={{ textAlign: "center", padding: "20px 0" }}
+          >
+            <p style={{ fontWeight: "bold" }}>ID: {ticket.id}</p>
             <p>Subject: {ticket.subject}</p>
             <p>Priority: {ticket.priority}</p>
             <p>Requester ID: {ticket.requester_id}</p>
             <p>Created at: {ticket.created_at}</p>
+            <Link
+              to={{
+                pathname: `/tickets/${ticket.id}`,
+              }}
+            >
+              Read more
+            </Link>
           </div>
         ))
       )}
