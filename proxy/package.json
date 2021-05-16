@@ -1,0 +1,24 @@
+{
+  "name": "zendesk-server",
+  "version": "1.0.0",
+  "description": "Server to get tickets from Zendesk Api",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZeeshanM20/zendesk-server.git"
+  },
+  "author": "Zeeshan Mujtaba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZeeshanM20/zendesk-server/issues"
+  },
+  "homepage": "https://github.com/ZeeshanM20/zendesk-server#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1"
+  }
+}
